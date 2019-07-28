@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ColorPicker.Views.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="HomePageRef"
+    Title="{Binding Title}"
+    BackgroundColor="{Binding BackColor}"
+    mc:Ignorable="d">
+
+    <StackLayout>
+        <Label
+            HorizontalOptions="Center"
+            Text="{Binding Source={x:Reference sliderRed}, Path=Value, StringFormat='Red:{0:F0}'}"
+            BackgroundColor="White"
+            VerticalOptions="CenterAndExpand" />
+        <Slider
+            x:Name="sliderRed"
+            Maximum="255"
+            Value="{Binding RedValue}" />
+
+        <Label
+            HorizontalOptions="Center"
+            Text="{Binding Source={x:Reference sliderGreen}, Path=Value, StringFormat='Green:{0:F0}'}"
+            BackgroundColor="White"
+            VerticalOptions="CenterAndExpand" />
+        <Slider
+            x:Name="sliderGreen"
+            Maximum="255"
+            Value="{Binding GreenValue}" />
+
+        <Label
+            HorizontalOptions="Center"
+            Text="{Binding Source={x:Reference sliderBlue}, Path=Value, StringFormat='Blue:{0:F0}'}"
+            BackgroundColor="White"
+            VerticalOptions="CenterAndExpand" />
+        <Slider
+            x:Name="sliderBlue"
+            Maximum="255"
+            Value="{Binding BlueValue}" />
+
+    </StackLayout>
+
+</ContentPage>
