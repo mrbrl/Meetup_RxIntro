@@ -81,8 +81,10 @@ namespace QuickFlicks.ViewModels
             Observable.FromEventPattern<PropertyChangedEventArgs>(this, nameof(PropertyChanged))
                 .Where(x => x.EventArgs.PropertyName == nameof(SearchTerm))
 
-                // 2 Slow It Down
+                // 2. Slow It Down
                 .Throttle(TimeSpan.FromMilliseconds(1000))
+
+                // 3. Implement Service cancellable service call
                 .Select(
                     // turn async method into observable
                     _ => Observable.FromAsync(async ct =>
@@ -97,7 +99,8 @@ namespace QuickFlicks.ViewModels
                         return movies;
                     })
                 )
-                // Observes current obs until new one, and cancel previous
+
+                //4. Observes current obs until new one, and cancel previous
                 .Switch()
                 .Subscribe(foundMovies => Movies = foundMovies);
 

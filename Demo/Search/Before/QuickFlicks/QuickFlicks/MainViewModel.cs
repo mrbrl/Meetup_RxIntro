@@ -39,6 +39,8 @@ namespace QuickFlicks.ViewModels
                 {
                     searchTerm = value;
                     RaisePropertyChanged();
+
+                    //TODO 1 Comment
                     OnSearchTermChangedAsync(searchTerm)
                         .ContinueWith(tr => throw new Exception("Search Failed.", tr.Exception),
                         TaskContinuationOptions.OnlyOnFaulted);
@@ -46,6 +48,7 @@ namespace QuickFlicks.ViewModels
             }
         }
 
+        //TODO 2 Comment
         private CancellationTokenSource cts;
         private async Task OnSearchTermChangedAsync(string searchTerm)
         {
@@ -72,6 +75,7 @@ namespace QuickFlicks.ViewModels
 
         public MainViewModel()
         {
+
         }
     }
 }

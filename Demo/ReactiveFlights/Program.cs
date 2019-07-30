@@ -46,8 +46,10 @@ namespace ReactiveFlights
 			{
 				// Wait for the first task to finish
 				var completed = await Task.WhenAny(runningTasks);
+
 				// Remove from our running list   
 				runningTasks.Remove(completed);
+
 				// Process the completed task (updates a property we may be binding to)
 				UpdateCheapestFlight(completed.Result);
 			}

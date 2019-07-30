@@ -54,6 +54,7 @@ namespace ColorPicker.ViewModels
         public HomeViewModel()
         {
             // TODO 2 Rx FromEventPattern 
+            
         }
     }
 }
