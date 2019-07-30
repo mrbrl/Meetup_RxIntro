@@ -92,8 +92,8 @@ namespace ReactiveFlights
 				.Merge()
 				// Get airline minimum
 				.Select(airlineFlightPrices => airlineFlightPrices.Min())
-				// "Take" all found minimums
-				.Take(runningTasks.Count)
+                // "Take" all found minimums
+                .Take(runningTasks.Count)
 				// ...and from them the minimum.
 				.Min();
 
