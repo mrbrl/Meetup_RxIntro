@@ -12,6 +12,7 @@ namespace ColorPicker.ViewModels
 {
     public class HomeViewModel : BaseViewModel
     {
+        // TODO 1 - to auto properties
         private int _redValue;
         private int _blueValue;
         private int _greenValue;
@@ -52,7 +53,7 @@ namespace ColorPicker.ViewModels
 
         public HomeViewModel()
         {
-            
+            // TODO 2 Rx FromEventPattern 
         }
     }
 }
